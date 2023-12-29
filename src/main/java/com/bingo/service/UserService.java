@@ -3,6 +3,7 @@ package com.bingo.service;
 import com.bingo.model.User;
 import com.bingo.repository.UserRepository;
 import java.util.*;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     
     private final UserRepository usuarioRepository;
+    private static final Logger logger = Logger.getLogger(UserService.class.getName());
 
     @Autowired
     public UserService(UserRepository usuarioRepository) {
@@ -32,4 +34,8 @@ public class UserService {
         usuarioRepository.deleteById(id);
     }
    
+    public Optional<User> iniciarSesion(String email, String password){
+        logger.info("Intento de inicio de sesión con email: " + email);
+        return usuarioRepository.findByEmail(email).filter(usuario -> usuario.verificarCredenciales(email, password));
+    }
 }
