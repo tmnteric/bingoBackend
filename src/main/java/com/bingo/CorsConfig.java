@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class CorsConfig implements WebMvcConfigurer {
 
+    //creacion de los cors para permitir solicitudes desde front
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")

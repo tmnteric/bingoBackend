@@ -38,4 +38,18 @@ public class UserService {
         logger.info("Intento de inicio de sesión con email: " + email);
         return usuarioRepository.findByEmail(email).filter(usuario -> usuario.verificarCredenciales(email, password));
     }
+    
+    private final Set<User> usuariosLogueados = new HashSet<>();
+
+    public void iniciarSesion(User usuario) {
+        usuariosLogueados.add(usuario);
+    }
+
+    public void cerrarSesion(User usuario) {
+        usuariosLogueados.remove(usuario);
+    }
+
+    public int obtenerContadorUsuariosLogueados() {
+        return usuariosLogueados.size();
+    }
 }

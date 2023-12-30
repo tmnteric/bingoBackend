@@ -18,6 +18,7 @@ public class TarjetonController {
     @Autowired
     private TarjetonService tarjetonService;
     
+    // api que genera el tarjeton del bingo
     @GetMapping("/generar")
     public Tarjeton generarTarjeton(){
         return tarjetonService.generarTarjeton();

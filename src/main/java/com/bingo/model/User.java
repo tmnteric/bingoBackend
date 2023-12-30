@@ -29,6 +29,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    //se crea el metodo verificar credenciales para poder generar el inicio de sesion
     public boolean verificarCredenciales(String email, String password) {
         logger.info("Verificando credenciales para el usuario con email: " + email);
         

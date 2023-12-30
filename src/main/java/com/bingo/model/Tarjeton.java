@@ -10,6 +10,7 @@ import lombok.Data;
 @Data
 public class Tarjeton {
     
+    // se crean 5 listas que asumen cada letra del carton de un bingo 
     private List<Integer> b;
     private List<Integer> i;
     private List<Integer> n;

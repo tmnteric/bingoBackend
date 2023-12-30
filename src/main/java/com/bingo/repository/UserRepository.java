@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
     
+    //metodo que busca el usuario por el email
     Optional<User> findByEmail(String email);
     
     static final Logger logger = Logger.getLogger(UserRepository.class.getName());
