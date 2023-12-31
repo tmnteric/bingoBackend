@@ -15,12 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/tarjeton")
 public class TarjetonController {
     
+    private final TarjetonService tarjetonService;
+
     @Autowired
-    private TarjetonService tarjetonService;
-    
-    // api que genera el tarjeton del bingo
+    public TarjetonController(TarjetonService tarjetonService) {
+        this.tarjetonService = tarjetonService;
+    }
+
     @GetMapping("/generar")
-    public Tarjeton generarTarjeton(){
-        return tarjetonService.generarTarjeton();
+    public Tarjeton generarTarjeton() {
+        return tarjetonService.generarTarjetonSinRepetir();
     }
 }
