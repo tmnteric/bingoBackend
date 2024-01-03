@@ -18,4 +18,4 @@ Finalmente, en el controlador 'UserController', generé una API para la creació
   - [https://github.com/tmnteric/bingoFrontend.git](enlace_al_repositorio_del_frontend)
 
 - **Video Explicativo en YouTube:**
-  - [https://youtu.be/wgOXN_txL-U](enlace_al_video_en_youtube)
+  - [https://youtu.be/wgOXN_txL-U](https://www.youtube.com/watch?v=wgOXN_txL-U&ab_channel=ericparra)
